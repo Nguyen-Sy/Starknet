@@ -1,0 +1,194 @@
+[
+    {
+        "type": "impl",
+        "name": "inzPosImpl",
+        "interface_name": "inzpos::inzPos::iInzPos::InterfaceInzPos"
+    },
+    {
+        "type": "struct",
+        "name": "core::integer::u256",
+        "members": [
+            { "name": "low", "type": "core::integer::u128" },
+            { "name": "high", "type": "core::integer::u128" }
+        ]
+    },
+    {
+        "type": "interface",
+        "name": "inzpos::inzPos::iInzPos::InterfaceInzPos",
+        "items": [
+            {
+                "type": "function",
+                "name": "transfer_token",
+                "inputs": [
+                    {
+                        "name": "_to",
+                        "type": "core::starknet::contract_address::ContractAddress"
+                    },
+                    { "name": "amount", "type": "core::integer::u256" }
+                ],
+                "outputs": [ ],
+                "state_mutability": "external"
+            },
+            {
+                "type": "function",
+                "name": "withdraw_token",
+                "inputs": [
+                    {
+                        "name": "_to",
+                        "type": "core::starknet::contract_address::ContractAddress"
+                    },
+                    { "name": "amount", "type": "core::integer::u256" }
+                ],
+                "outputs": [ ],
+                "state_mutability": "external"
+            },
+            {
+                "type": "function",
+                "name": "deposit_token",
+                "inputs": [
+                    {
+                        "name": "_from",
+                        "type": "core::starknet::contract_address::ContractAddress"
+                    },
+                    { "name": "amount", "type": "core::integer::u256" },
+                    { "name": "callbackData", "type": "core::felt252" }
+                ],
+                "outputs": [ ],
+                "state_mutability": "external"
+            },
+            {
+                "type": "function",
+                "name": "get_balance",
+                "inputs": [
+                    {
+                        "name": "account",
+                        "type": "core::starknet::contract_address::ContractAddress"
+                    }
+                ],
+                "outputs": [ { "type": "core::integer::u256" } ],
+                "state_mutability": "view"
+            },
+            {
+                "type": "function",
+                "name": "pause",
+                "inputs": [ ],
+                "outputs": [ ],
+                "state_mutability": "external"
+            },
+            {
+                "type": "function",
+                "name": "unpause",
+                "inputs": [ ],
+                "outputs": [ ],
+                "state_mutability": "external"
+            }
+        ]
+    },
+    {
+        "type": "constructor",
+        "name": "constructor",
+        "inputs": [
+            {
+                "name": "usdt",
+                "type": "core::starknet::contract_address::ContractAddress"
+            },
+            {
+                "name": "owner",
+                "type": "core::starknet::contract_address::ContractAddress"
+            }
+        ]
+    },
+    {
+        "type": "event",
+        "name": "inzpos::inzPos::inzPos::InzPos::PosWithDrawE",
+        "kind": "struct",
+        "members": [
+            {
+                "name": "fromAddress",
+                "type": "core::starknet::contract_address::ContractAddress",
+                "kind": "data"
+            },
+            {
+                "name": "toAddress",
+                "type": "core::starknet::contract_address::ContractAddress",
+                "kind": "data"
+            },
+            {
+                "name": "amount",
+                "type": "core::integer::u256",
+                "kind": "data"
+            }
+        ]
+    },
+    {
+        "type": "event",
+        "name": "inzpos::inzPos::inzPos::InzPos::PosDepositE",
+        "kind": "struct",
+        "members": [
+            {
+                "name": "fromAddress",
+                "type": "core::starknet::contract_address::ContractAddress",
+                "kind": "data"
+            },
+            {
+                "name": "toAddress",
+                "type": "core::starknet::contract_address::ContractAddress",
+                "kind": "data"
+            },
+            {
+                "name": "amount",
+                "type": "core::integer::u256",
+                "kind": "data"
+            },
+            {
+                "name": "callbackData",
+                "type": "core::felt252",
+                "kind": "data"
+            }
+        ]
+    },
+    {
+        "type": "event",
+        "name": "inzpos::inzPos::inzPos::InzPos::PosTransferE",
+        "kind": "struct",
+        "members": [
+            {
+                "name": "fromAddress",
+                "type": "core::starknet::contract_address::ContractAddress",
+                "kind": "data"
+            },
+            {
+                "name": "toAddress",
+                "type": "core::starknet::contract_address::ContractAddress",
+                "kind": "data"
+            },
+            {
+                "name": "amount",
+                "type": "core::integer::u256",
+                "kind": "data"
+            }
+        ]
+    },
+    {
+        "type": "event",
+        "name": "inzpos::inzPos::inzPos::InzPos::Event",
+        "kind": "enum",
+        "variants": [
+            {
+                "name": "PosWithDrawE",
+                "type": "inzpos::inzPos::inzPos::InzPos::PosWithDrawE",
+                "kind": "nested"
+            },
+            {
+                "name": "PosDepositE",
+                "type": "inzpos::inzPos::inzPos::InzPos::PosDepositE",
+                "kind": "nested"
+            },
+            {
+                "name": "PosTransferE",
+                "type": "inzpos::inzPos::inzPos::InzPos::PosTransferE",
+                "kind": "nested"
+            }
+        ]
+    }
+]
