@@ -21,6 +21,10 @@
                 "name": "transfer_token",
                 "inputs": [
                     {
+                        "name": "tokenAddress",
+                        "type": "core::starknet::contract_address::ContractAddress"
+                    },
+                    {
                         "name": "_to",
                         "type": "core::starknet::contract_address::ContractAddress"
                     },
@@ -34,6 +38,10 @@
                 "name": "withdraw_token",
                 "inputs": [
                     {
+                        "name": "tokenAddress",
+                        "type": "core::starknet::contract_address::ContractAddress"
+                    },
+                    {
                         "name": "_to",
                         "type": "core::starknet::contract_address::ContractAddress"
                     },
@@ -46,6 +54,10 @@
                 "type": "function",
                 "name": "deposit_token",
                 "inputs": [
+                    {
+                        "name": "tokenAddress",
+                        "type": "core::starknet::contract_address::ContractAddress"
+                    },
                     {
                         "name": "_from",
                         "type": "core::starknet::contract_address::ContractAddress"
@@ -61,7 +73,7 @@
                 "name": "get_balance",
                 "inputs": [
                     {
-                        "name": "account",
+                        "name": "tokenAddress",
                         "type": "core::starknet::contract_address::ContractAddress"
                     }
                 ],
@@ -89,10 +101,6 @@
         "name": "constructor",
         "inputs": [
             {
-                "name": "usdt",
-                "type": "core::starknet::contract_address::ContractAddress"
-            },
-            {
                 "name": "owner",
                 "type": "core::starknet::contract_address::ContractAddress"
             }
@@ -103,11 +111,6 @@
         "name": "inzpos::inzPos::inzPos::InzPos::PosWithDrawE",
         "kind": "struct",
         "members": [
-            {
-                "name": "fromAddress",
-                "type": "core::starknet::contract_address::ContractAddress",
-                "kind": "data"
-            },
             {
                 "name": "toAddress",
                 "type": "core::starknet::contract_address::ContractAddress",
@@ -125,6 +128,11 @@
         "name": "inzpos::inzPos::inzPos::InzPos::PosDepositE",
         "kind": "struct",
         "members": [
+            {
+                "name": "tokenAddress",
+                "type": "core::starknet::contract_address::ContractAddress",
+                "kind": "data"
+            },
             {
                 "name": "fromAddress",
                 "type": "core::starknet::contract_address::ContractAddress",
@@ -152,6 +160,11 @@
         "name": "inzpos::inzPos::inzPos::InzPos::PosTransferE",
         "kind": "struct",
         "members": [
+            {
+                "name": "tokenAddress",
+                "type": "core::starknet::contract_address::ContractAddress",
+                "kind": "data"
+            },
             {
                 "name": "fromAddress",
                 "type": "core::starknet::contract_address::ContractAddress",

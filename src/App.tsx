@@ -22,6 +22,7 @@ function App() {
     // all arguments and their type can be found in abi.json
     // type felt252 = hex type with prefix 0x
     const depositCallData = callData.compile("deposit_token", {
+      "tokenAddress": import.meta.env.VITE_USDT_ADDRESS,
       "_from": import.meta.env.VITE_ACCOUNT_ADDRESS,
       "amount": 10000,
       "callbackData": 0x1 // must be hex type with prefix 0x.
